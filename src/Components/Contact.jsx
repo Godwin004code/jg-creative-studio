@@ -1,7 +1,67 @@
 
-import React from 'react'
+import React, {useState, useRef} from 'react'
+import emailjs from "@emailjs/browser";
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
+    const [email, setEmail] = useState("");
+    const [num, setNum] = useState("");
+    const [mes, setMes] = useState("");
+
+    const form = useRef()
+
+    const emailHandler = (e) => {
+        setEmail(e.target.value);
+      };
+      const mesHandler = (e) => {
+        setMes(e.target.value);
+      };
+      const fnameHandler = (e) => {
+        setFname(e.target.value);
+      };
+      const lnameHandler = (e) => {
+        setLname(e.target.value);
+      };
+      
+      const numHandler = (e) => {
+        setNum(e.target.value);
+      };
+      const submitHandler = (e) => {
+        e.preventDefault();
+    
+        if (email === "" || mes === "") {
+          alert("Error")
+    
+          return;
+        } else {
+          emailjs
+            .sendForm(
+              "service_bquzkdk",
+              "template_j8qjvsl",
+              form.current,
+              "SaKsUWe14ryr1EYV_"
+            )
+            .then(
+              (result) => {
+                console.log(result.text);
+                Swal.fire({
+                  title: "I have received your message, Thank You",
+                  icon: "success",
+                });
+              },
+              (error) => {
+                console.log(error.text);
+              }
+            );
+          setEmail("");
+          setMes("");
+          setFname("");
+          setLname("")
+          setNum("")
+        }
+      };
   return (
     <section className='py-20'>
         <section className='flex md:flex-col justify-between w-[80%] md:w-[100%] mx-auto'>
@@ -46,18 +106,30 @@ const Contact = () => {
 </div>
             </div>
             <div className='bg-[#f4f4f4] w-[50%] md:w-[90%] md:mx-auto p-6 rounded-2xl'>
+                <form ref={form} >
                 <div className='w-[100%] flex justify-between'>
-                    <input className='w-[47%] bg-transparent py-4 pl-4 inp' type="text" placeholder='First Name' />
-                    <input className='w-[47%] bg-transparent py-4 pl-4 inp' type="text" placeholder='Last Name' />
+                    <input name="fname"
+                value={fname}
+                onChange={fnameHandler} className='w-[47%] bg-transparent py-4 pl-4 inp' type="text" placeholder='First Name' />
+                    <input name="lname"
+                value={lname}
+                onChange={lnameHandler} className='w-[47%] bg-transparent py-4 pl-4 inp' type="text" placeholder='Last Name' />
                 </div>
                 <div className='w-[100%] flex justify-between'>
-                    <input className='w-[47%] bg-transparent py-4 pl-4 inp' type="email" placeholder='Email' />
-                    <input className='w-[47%] bg-transparent py-4 pl-4 inp' type="number" placeholder='Phone Number' />
+                    <input name="email"
+                value={email}
+                onChange={emailHandler} className='w-[47%] bg-transparent py-4 pl-4 inp' type="email" placeholder='Email' />
+                    <input name="num"
+                value={num}
+                onChange={numHandler} className='w-[47%] bg-transparent py-4 pl-4 inp' type="number" placeholder='Phone Number' />
                 </div>
                 <div className='w-[100%]'>
-                    <textarea className='inp w-[100%] bg-transparent pl-4 pt-4' placeholder='Message' cols="20" rows="6"></textarea>
+                    <textarea name="mes"
+                value={mes}
+                onChange={mesHandler} className='inp w-[100%] bg-transparent pl-4 pt-4' placeholder='Message' cols="20" rows="6"></textarea>
                 </div>
-                <div className=' w-[30%] text-center py-3 rounded-md bg-white md:w-[70%] md:mt-5'>Send Message</div>
+                <div onClick={submitHandler} className=' w-[30%] text-center py-3 rounded-md bg-white md:w-[70%] md:mt-5'>Send Message</div>
+                </form>
             </div>
         </section>
     </section>

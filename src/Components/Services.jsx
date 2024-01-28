@@ -4,7 +4,7 @@ const Services = () => {
   return (
     <Element name='services'>
     <div className='py-16'>
-        <h2 className='text-[#64CCC5] text-3xl text-center'>Our Services</h2>
+        <h2 className='text-[#64CCC5] text-3xl text-center uppercase font-semibold '>Our Services</h2>
         <h2 className='text-center text-5xl'>High-impact services for your business</h2>
         <section className='flex md:flex-col w-[70%] md:w-[90%] mx-auto mt-10'>
             <div className='bg-[#f4f4f4] p-8 service'>

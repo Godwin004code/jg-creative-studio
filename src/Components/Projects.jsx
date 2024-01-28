@@ -10,10 +10,12 @@ import Project8 from "../images/Screenshot 2024-01-04 at 19.45.32.png"
 import Project9 from "../images/Screenshot 2024-01-04 at 20.39.22.png"
 import { Element } from "react-scroll"
 
+
+
 const Projects = () => {
   return (
     <Element name='projects'>
-    <div className='py-32'>
+    <div className='py-32 md:pb-0'>
         <h2 className='text-center text-5xl  mb-16'>Recent Projects</h2>
         <section className='flex justify-between w-[80%] md:flex-col md:w-[90%] mx-auto mb-10'>
             <div>

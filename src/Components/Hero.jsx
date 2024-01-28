@@ -13,7 +13,7 @@ const Hero = () => {
             <p className='text-white mt-6 mb-12'>
             Empower your online presence with cutting-edge web development solutions. Our expertise propels your business growth, taking it to unprecedented levels of success.
             </p>
-            <a href="http://wa.me/447450685689">
+            <a className='md:hidden' href="http://wa.me/447450685689">
             <div className=' w-[30%] text-center py-3 rounded-md bg-white md:w-[70%] md:mb-10'>
             Contact Us
             </div>
@@ -23,7 +23,13 @@ const Hero = () => {
             <div className='ringer'>
             <img src={devs} alt="developers" />
             </div>
+            
         </div>
+        <a className='hidden md:block md:mt-16 ' href="http://wa.me/447450685689">
+            <div className=' w-[30%] md:mx-auto text-center py-3 rounded-md bg-white md:w-[70%] md:mb-10'>
+            Contact Us
+            </div>
+            </a>
     </section>
     </Element>
   )
