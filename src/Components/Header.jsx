@@ -42,9 +42,11 @@ const Nav = () => {
                
             </ul>
         </nav>
+        <a href="http://wa.me/447450685689">
         <section className='mt-5'>
             <button>Contact Us</button>
         </section>
+        </a>
         <section className='mobile__menu'>
               
   <label for="menu-toggle" className="menu-icon md:mt-7" ref={iconRef} onClick={handleClick}>
@@ -58,15 +60,28 @@ const Nav = () => {
         <section className='mobile__nav' ref={menuRef}>
         <nav className='menu'>
             <ul>
-                <li>About Us</li>
-                <li>Services</li>
-                <li>Projects</li>
-                <li>Testimonial</li>
+                <li>
+                    <Link to='about' spy={true} 
+      smooth={true} 
+      offset={0} 
+      duration={500}>About Us</Link>
+                    </li>
+                    <li>
+                    <Link smooth={true} 
+      offset={50} 
+      duration={500} className='cursor-pointer' to='process'>Our Process</Link>
+                </li>
+                <li>
+                    <Link smooth={true} 
+      offset={0} 
+      duration={500} className='cursor-pointer' to='projects'>Projects</Link>
+                </li>
+                <li className='hidden'>Testimonial</li>
             </ul>
         </nav>
-        <section>
-        <a href="http://wa.me/447450685689">
-            <button>
+        <section className='w-[100%] mx-auto'>
+        <a className='w-[100%] mx-auto' href="http://wa.me/447450685689">
+            <button className='w-[100%] mx-auto'>
                 Contact Us
             </button>
             </a>
