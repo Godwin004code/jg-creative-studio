@@ -9,10 +9,12 @@ import Project7 from "../images/Screenshot 2024-01-03 at 17.48.07.png"
 import Project8 from "../images/Screenshot 2024-01-04 at 19.45.32.png"
 import Project9 from "../images/Screenshot 2024-01-04 at 20.39.22.png"
 import { Element } from "react-scroll"
-
+import { NavLink, useLocation } from 'react-router-dom';
 
 
 const Projects = () => {
+    const params = useLocation();
+    console.log(params.pathname)
   return (
     <Element name='projects'>
     <div className='py-32 md:pb-0'>
@@ -47,7 +49,7 @@ const Projects = () => {
                 </div>
             </div>
         </section>
-        <section className='flex justify-between w-[80%] md:flex-col md:w-[90%] mx-auto mb-10'>
+        <section className={params.pathname === '/' ? 'hidden' : ' flex justify-between w-[80%] md:flex-col md:w-[90%] mx-auto mb-10'}>
             <div>
                 <div>
                     <img  src={Project1} alt="" />
@@ -77,7 +79,7 @@ const Projects = () => {
                 </div>
             </div>
         </section>
-        <section className='flex justify-between w-[80%] md:flex-col md:w-[90%] mx-auto mb-10'>
+        <section className={params.pathname === '/' ? 'hidden' : ' flex justify-between w-[80%] md:flex-col md:w-[90%] mx-auto mb-10'}>
             <div>
                 <div>
                     <img src={Project3} alt="" />
@@ -107,6 +109,9 @@ const Projects = () => {
                 </div>
             </div>
         </section>
+        <div className='w-[20%] md:w-[50%] mx-auto text-center'>
+            <NavLink to="/projects" className={params.pathname === "/projects" ? "hidden" : "block w-[100%] mx-auto text-center bg-[#64CCC5] text-white rounded-sm py-4 px-3"}>See more projects</NavLink>
+        </div>
     </div>
     </Element>
   )

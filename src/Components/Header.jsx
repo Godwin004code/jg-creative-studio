@@ -3,6 +3,7 @@ import '../scss/header.scss'
 import Logo from "../images/Free_Sample_By_Wix (1).jpg"
 import { useRef, useEffect } from 'react'
 import {Link} from "react-scroll"
+import { NavLink, useLocation } from 'react-router-dom'
 
 const Nav = () => {
  const menuRef = useRef();
@@ -13,31 +14,36 @@ const Nav = () => {
     iconRef.current.classList.toggle("active")
     console.log(menuRef.current);
   }
+  const params = useLocation();
+  console.log(params.pathname)
  
   return (
     <header className=''>
         <section className='header-wrapper'>
        
-            <img className=' mt-[-50px]' src={Logo} alt="logo" />
+           <NavLink to="/"> <img className=' mt-[-50px]' src={Logo} alt="logo" /></NavLink>
     
-        <nav className='nav x'>
+        <nav className={params.pathname === '/projects' ? 'hidden' : 'block nav x'}>
             <ul className='mt-3'>
             
-                <li>
+                <li className={params.pathname === '/projects' ? 'hidden' : 'block'}>
                     <Link to='about' spy={true} 
       smooth={true} 
       offset={0} 
       duration={500} className='cursor-pointer'>About Us</Link>
                 </li>
-                <li>
+                <li className={params.pathname === '/projects' ? 'hidden' : 'block'}>
                     <Link smooth={true} 
       offset={50} 
       duration={500} className='cursor-pointer' to='process'>Our Process</Link>
                 </li>
+                <li className={params.pathname === '/projects' ? 'block' : 'hidden'}>
+                    <NavLink to="/">Home</NavLink>
+                  
+                </li>
                 <li>
-                    <Link smooth={true} 
-      offset={0} 
-      duration={500} className='cursor-pointer' to='projects'>Projects</Link>
+                    <NavLink to="projects">Projects</NavLink>
+                  
                 </li>
                
             </ul>
@@ -60,16 +66,21 @@ const Nav = () => {
         <section className='mobile__nav' ref={menuRef}>
         <nav className='menu'>
             <ul>
-                <li>
+                <li className={params.pathname === '/projects' ? 'hidden' : 'block'}>
                     <Link to='about' spy={true} 
       smooth={true} 
       offset={0} 
       duration={500}>About Us</Link>
                     </li>
-                    <li>
+                    <li className={params.pathname === '/projects' ? 'hidden' : 'block'}>
                     <Link smooth={true} 
       offset={50} 
       duration={500} className='cursor-pointer' to='process'>Our Process</Link>
+                </li>
+                <li className={params.pathname === '/projects' ? 'block' : 'hidden'}>
+                    <NavLink to="/"> Home</NavLink>
+                    
+
                 </li>
                 <li>
                     <Link smooth={true} 
