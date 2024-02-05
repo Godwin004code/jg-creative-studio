@@ -25,7 +25,7 @@ const Hero = () => {
             </div>
             
         </div>
-        <a className='hidden md:block md:mt-16 ' href="http://wa.me/447450685689">
+        <a className='hidden md:block md:mt-16 ' href="https://cal.com/jg-creative-studio/meeting-with-jg-creative-studio">
             <div className=' w-[30%] md:mx-auto text-center py-3 rounded-md bg-white md:w-[70%] md:mb-10'>
             Contact Us
             </div>
