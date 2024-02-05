@@ -48,7 +48,7 @@ const Nav = () => {
                
             </ul>
         </nav>
-        <a href="http://wa.me/447450685689">
+        <a href="https://cal.com/jg-creative-studio/meeting-with-jg-creative-studio">
         <section className='mt-5'>
             <button>Contact Us</button>
         </section>
@@ -91,7 +91,7 @@ const Nav = () => {
             </ul>
         </nav>
         <section className='w-[100%] mx-auto'>
-        <a className='w-[100%] mx-auto' href="http://wa.me/447450685689">
+        <a className='w-[100%] mx-auto' href="https://cal.com/jg-creative-studio/meeting-with-jg-creative-studio">
             <button className='w-[100%] mx-auto'>
                 Contact Us
             </button>

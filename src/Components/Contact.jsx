@@ -32,13 +32,16 @@ const Contact = () => {
         e.preventDefault();
     
         if (email === "" || mes === "") {
-          alert("Error")
+          Swal.fire({
+            title: "Fields must not be empty",
+            icon: "warning",
+          });
     
           return;
         } else {
           emailjs
             .sendForm(
-              "service_bquzkdk",
+              "service_jddul7d",
               "template_j8qjvsl",
               form.current,
               "SaKsUWe14ryr1EYV_"
@@ -47,7 +50,7 @@ const Contact = () => {
               (result) => {
                 console.log(result.text);
                 Swal.fire({
-                  title: "I have received your message, Thank You",
+                  title: "We have received your message, Thank You! We will get back to you ASAP.",
                   icon: "success",
                 });
               },
@@ -77,7 +80,7 @@ const Contact = () => {
 </svg></div>
 <div className='ml-4'>
     <h2>Our Email</h2>
-    <p>jgcreativestudio@gmail.com</p>
+    <p>jgcreativestudio1@gmail.com</p>
 </div>
         
 </div>
@@ -128,7 +131,7 @@ const Contact = () => {
                 value={mes}
                 onChange={mesHandler} className='inp w-[100%] bg-transparent pl-4 pt-4' placeholder='Message' cols="20" rows="6"></textarea>
                 </div>
-                <div onClick={submitHandler} className=' w-[30%] text-center py-3 rounded-md bg-white md:w-[70%] md:mt-5'>Send Message</div>
+                <div onClick={submitHandler} className='cursor-pointer w-[30%] text-center py-3 rounded-md bg-white md:w-[70%] md:mt-5'>Send Message</div>
                 </form>
             </div>
         </section>
