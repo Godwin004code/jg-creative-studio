@@ -55,7 +55,7 @@ const Footer = () => {
     </div>
     <div className='md:mb-5'>
         <h2 className='text-white'>Address</h2>
-        <p className='text-white'>119 Tanglewood Lane Gulfport, MS 39503</p>
+        <p className='text-white'>Phillimore Terrace, Allen St, London W8 6BJ, UK</p>
     </div>
     <div className='flex '>
         <div className='bg-white w-[50px] h-[50px] rounded-full flex justify-center items-center mr-2'>

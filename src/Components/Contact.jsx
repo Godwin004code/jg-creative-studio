@@ -103,7 +103,7 @@ const Contact = () => {
 </svg></div>
 <div className='ml-4'>
     <h2>Find us</h2>
-    <p><a href="#">Open Google Map</a></p>
+    <p><a href="https://maps.app.goo.gl/5ypfrTYFo2kVEjaRA">Open Google Map</a></p>
 </div>
         </div>
 </div>
