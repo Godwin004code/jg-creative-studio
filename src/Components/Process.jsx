@@ -25,7 +25,7 @@ const Process = () => {
 </svg> <span className='my-auto text-2xl ml-2'>Call</span>
         </div>
         <div className='absolute top-20 w-[55%] md:w-[60%] md:left-8 left-5'>
-        Get on a call with us by clicking any of the contact button or send us a message through the contact form.
+        Get on a call with us by clicking on the contact buttons.
         </div>
        </section>
        <section className='relative w-[25%] md:w-[100%] md:mb-16'>
@@ -45,7 +45,7 @@ const Process = () => {
 </svg> <span className='my-auto text-2xl ml-2'>Discuss</span>
         </div>
         <div className='absolute top-20  w-[55%] md:w-[60%] md:left-8 left-5'>
-        1 hour or more where we brainstorming and talk about your project. You will talk to us directly on the call.
+        1 hour or more where we brainstorm and talk about your project directly on a phone call.
         </div>
        </section>
        <section className='relative w-[25%] md:w-[100%] md:mb-16'>
