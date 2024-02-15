@@ -50,7 +50,7 @@ const Footer = () => {
             <a href="http://wa.me/447450685689">+44 7450 685689</a>
             </p>
         <p className='text-white'>
-            <a href="http://wa.me/2349070797027"> +234 9070 797027</a>
+            <a href="http://wa.me/2349070797027"> +234 903 042 5674</a>
            </p>
     </div>
     <div className='md:mb-5'>
